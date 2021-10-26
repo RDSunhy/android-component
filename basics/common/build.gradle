@@ -1,0 +1,61 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+def ext = rootProject.ext
+
+android {
+    compileSdkVersion ext.common.compileSdkVersion
+    buildToolsVersion ext.common.buildToolsVersion
+    resourcePrefix ext.prefix.common
+
+    defaultConfig {
+        minSdkVersion ext.common.minSdkVersion
+        targetSdkVersion ext.common.targetSdkVersion
+        versionCode ext.common.versionCode
+        versionName ext.common.versionName
+
+        multiDexEnabled true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    kapt {
+        generateStubs = true
+        arguments {
+            arg("AROUTER_MODULE_NAME", project.getName())
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    api project(':basics:base')
+    api project(':libs:imageLoader')
+    api project(':libs:network')
+    api project(':basics:database')
+    api project(':basics:routers')
+    api project(':widgets:item_delegates')
+    api project(':widgets:resource')
+    api project(':widgets:views')
+    api ext.deps.arouterApi
+    kapt ext.deps.arouterCompiler
+}

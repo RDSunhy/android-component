@@ -1,0 +1,73 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+def ext = rootProject.ext
+
+android {
+    compileSdkVersion ext.common.compileSdkVersion
+    buildToolsVersion ext.common.buildToolsVersion
+    resourcePrefix ext.prefix.base
+
+    defaultConfig {
+        minSdkVersion ext.common.minSdkVersion
+        targetSdkVersion ext.common.targetSdkVersion
+        versionCode ext.common.versionCode
+        versionName ext.common.versionName
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    api project(':basics:ktx')
+
+    api ext.deps.kotlinstdlib
+    api ext.deps.ktStdlibJdk
+    api ext.deps.corektx
+    api ext.deps.appcompat
+    api ext.deps.material
+    api ext.deps.multidex
+
+    api ext.deps.ktCore
+    api ext.deps.collectionKtx
+    api ext.deps.activityKtx
+    api ext.deps.fragmentKtx
+    api ext.deps.livedataCoreKtx
+    api ext.deps.livedataKtx
+    api ext.deps.viewmodelKtx
+    api ext.deps.runtimeKtx
+
+    api ext.deps.arouterApi
+
+    api ext.deps.coroutines
+    api ext.deps.loadsir
+    api ext.deps.xxpermissions
+    api ext.deps.liveEventBus
+    api ext.deps.multitype
+    api ext.deps.refreshLayout
+    api ext.deps.refreshHeaderClassics
+    api ext.deps.utilcodex
+    api ext.deps.XPopup
+    api ext.deps.onCrash
+    api ext.deps.fastJson
+
+    api ext.deps.constraintlayout
+    api ext.deps.recyclerview
+    api ext.deps.banner
+    api ext.deps.badgeView
+
+    debugImplementation ext.deps.leakCanary
+}

@@ -1,0 +1,18 @@
+rootProject.name = "talking-android"
+include ':app'
+include ':components:bottle'
+include ':components:message'
+include ':components:wall'
+include ':components:mine'
+include ':components:login'
+include ':basics:common'
+include ':basics:routers'
+include ':basics:database'
+include ':basics:base'
+include ':basics:ktx'
+include ':widgets:item_delegates'
+include ':widgets:views'
+include ':widgets:resource'
+include ':libs:imageLoader'
+include ':libs:network'
+

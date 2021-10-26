@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="top.sunhy.talking">
+
+    <application
+        android:name="top.sunhy.MainApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/img_logo"
+        android:label="@string/main_app_name"
+        android:roundIcon="@mipmap/img_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppTheme">
+
+        <activity android:name=".MainActivity"></activity>
+
+    </application>
+
+</manifest>

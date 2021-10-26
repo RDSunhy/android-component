@@ -1,0 +1,36 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+def ext = rootProject.ext
+
+android {
+    compileSdkVersion ext.common.compileSdkVersion
+    buildToolsVersion ext.common.buildToolsVersion
+    resourcePrefix ext.prefix.network
+
+    defaultConfig {
+        minSdkVersion ext.common.minSdkVersion
+        targetSdkVersion ext.common.targetSdkVersion
+        versionCode ext.common.versionCode
+        versionName ext.common.versionName
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation project(':basics:base')
+
+    api ext.deps.retrofit
+    api ext.deps.retrofitConverterGson
+    api ext.deps.okHttpLogger
+}

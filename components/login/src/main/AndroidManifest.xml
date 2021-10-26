@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="top.sunhy.talking.login">
+
+    <application>
+        <activity android:name=".LoginMainActivity" android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name=".ui.RegistActivity" android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name=".ui.ResetActivity" android:windowSoftInputMode="adjustResize"></activity>
+    </application>
+
+</manifest>

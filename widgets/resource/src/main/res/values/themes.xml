@@ -1,0 +1,46 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/skyblue</item>
+        <item name="colorPrimaryVariant">@color/lightskyblue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/mediumturquoise</item>
+        <item name="colorSecondaryVariant">@color/steelblue</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/skyblue</item>
+        <!-- Customize your theme here. -->
+        <!-- 暗色模式不跟随系统 -->
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <!-- 默认activity动画 -->
+        <item name="android:windowAnimationStyle">@style/AppDefaultActivityAnim</item>
+        <!-- 字体颜色 -->
+        <item name="android:textColor">#222222</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+    </style>
+
+    <!-- 应用启动页(StartingWindow)的theme -->
+    <style name="Theme.SplashTheme" parent="Theme.AppTheme">
+        <item name="android:windowBackground">@color/lightblue</item>
+        <!--<item name="android:windowFullscreen">true</item>-->
+    </style>
+
+    <!-- activity 切换动画 左右滑入滑出 -->
+    <style name="AppDefaultActivityAnim" parent="@android:style/Animation.Activity">
+        <!--用于设置打开新的Activity并进入新的Activity展示的动画-->
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <!--用于设置打开新的Activity并销毁之前的Activity展示的动画-->
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <!--用于设置关闭当前Activity进入上一个Activity展示的动画-->
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <!--用于设置关闭当前Activity时展示的动画-->
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+
+</resources>

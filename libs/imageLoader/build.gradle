@@ -1,0 +1,38 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+def ext = rootProject.ext
+
+android {
+    compileSdkVersion ext.common.compileSdkVersion
+    buildToolsVersion ext.common.buildToolsVersion
+    resourcePrefix ext.prefix.imageLoader
+
+    defaultConfig {
+        minSdkVersion ext.common.minSdkVersion
+        targetSdkVersion ext.common.targetSdkVersion
+        versionCode ext.common.versionCode
+        versionName ext.common.versionName
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation project(':basics:ktx')
+    implementation ext.deps.okHttp
+    implementation ext.deps.coroutines
+    api ext.deps.glide
+    api ext.deps.glidGifEncodere
+    kapt ext.deps.glideCompiler
+}
